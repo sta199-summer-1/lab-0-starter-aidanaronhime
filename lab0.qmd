@@ -1,0 +1,72 @@
+---
+title: "Lab 0 - Hello R!"
+author: "[INSERT NAME]"
+date: "[INSERT DATE]"
+format: pdf
+editor: visual
+---
+
+## Load Packages
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(datasauRus)
+```
+
+## Exercise 1
+
+(Type your answer to exercise #1 here. Note this exercise doesn't require any R code.)
+
+## Exercise 2
+
+(The answer for this exercise is given below, but you should clean up the narrative so it only includes what you want to turn in.)
+
+First, let's plot the data in the dino dataset (we will cover **ggplot2** in much more depth next week):
+
+```{r}
+#| label: plot-dino
+dino_data <- datasaurus_dozen %>%
+  filter(dataset == "dino")
+ggplot(data = dino_data, mapping = aes(x = x, y = y)) + 
+  geom_point()
+```
+
+Next calculate the correlation between `x` and `y` in this dataset.
+
+```{r}
+#| label: cor-dino
+dino_data %>%
+  summarize(r = cor(x, y))
+```
+
+## Exercise 3
+
+(Add code and narrative here as needed. Note the code chunks below are labeled with `plot-circle` and `cor-circle` to provide spaces to place the code for plotting and calculating the correlation coefficient.)
+
+(When you have finished, delete these instructions.)
+
+```{r}
+#| label: plot-circle
+# Your code should go here! This is a comment, which should be deleted.
+```
+
+Some more narrative can go here.
+
+```{r}
+#| label: cor-circle
+# Calculate the correlation here
+```
+
+Conclude with some more narrative, if needed.
+
+## Exercise 4
+
+(Add a labeled code chunk and narrative here. Insert code chunks using the "insert chunk" button (a green C with a +).
+Alternatively, use CMD + OPTION + I (Mac) or CTRL + ALT + I (Windows).)
+
+## Exercise 5
+
+(Add a labeled code chunk and narrative here. Insert code chunks using the "insert chunk" button (a green C with a +).
+Alternatively, use CMD + OPTION + I (Mac) or CTRL + ALT + I (Windows).)
