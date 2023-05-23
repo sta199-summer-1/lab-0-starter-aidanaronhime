@@ -21,9 +21,7 @@ library(datasauRus)
 
 ## Exercise 2
 
-(The answer for this exercise is given below, but you should clean up the narrative so it only includes what you want to turn in.)
-
-First, let's plot the data in the dino dataset (we will cover **ggplot2** in much more depth next week):
+First, let's plot the data in the dino dataset:
 
 ```{r}
 #| label: plot-dino
@@ -40,6 +38,8 @@ Next calculate the correlation between `x` and `y` in this dataset.
 dino_data %>%
   summarize(r = cor(x, y))
 ```
+
+r = -0.06447185
 
 ## Exercise 3
 
