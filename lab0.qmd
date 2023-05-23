@@ -17,7 +17,7 @@ library(datasauRus)
 
 ## Exercise 1
 
-(Type your answer to exercise #1 here. Note this exercise doesn't require any R code.)
+1846 rows and 3 columns. The 3 variables included are "dataset", "x", and "y".
 
 ## Exercise 2
 
