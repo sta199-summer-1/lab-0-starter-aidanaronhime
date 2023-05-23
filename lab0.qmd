@@ -43,23 +43,25 @@ r = -0.06447185
 
 ## Exercise 3
 
-(Add code and narrative here as needed. Note the code chunks below are labeled with `plot-circle` and `cor-circle` to provide spaces to place the code for plotting and calculating the correlation coefficient.)
-
-(When you have finished, delete these instructions.)
+Plotting data from the circle dataset:
 
 ```{r}
 #| label: plot-circle
-# Your code should go here! This is a comment, which should be deleted.
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) + 
+  geom_point()
 ```
 
-Some more narrative can go here.
+Correlation between x and y for circle:
 
 ```{r}
 #| label: cor-circle
-# Calculate the correlation here
+circle_data %>%
+  summarize(r = cor(x, y))
 ```
 
-Conclude with some more narrative, if needed.
+r = - 0.06834336, which is slightly less than the correlation coefficient for the dino dataset.
 
 ## Exercise 4
 
