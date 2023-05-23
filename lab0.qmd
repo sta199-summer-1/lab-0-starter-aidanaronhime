@@ -65,7 +65,25 @@ r = - 0.06834336, which is slightly less than the correlation coefficient for th
 
 ## Exercise 4
 
-(Add a labeled code chunk and narrative here. Insert code chunks using the "insert chunk" button (a green C with a +). Alternatively, use CMD + OPTION + I (Mac) or CTRL + ALT + I (Windows).)
+Plotting data from the star dataset:
+
+```{r}
+#| label: plot-star
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
+ggplot(data = star_data, mapping = aes(x = x, y = y)) + 
+  geom_point()
+```
+
+Correlation between x and y for star:
+
+```{r}
+#| label: cor-circle
+star_data %>%
+  summarize(r = cor(x, y))
+```
+
+r = - 0.0629611.
 
 ## Exercise 5
 
