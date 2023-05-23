@@ -25,6 +25,8 @@ First, let's plot the data in the dino dataset:
 
 ```{r}
 #| label: plot-dino
+#| fig-height: 5
+#| fig-width: 5
 dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
 ggplot(data = dino_data, mapping = aes(x = x, y = y)) + 
@@ -47,6 +49,8 @@ Plotting data from the circle dataset:
 
 ```{r}
 #| label: plot-circle
+#| fig-height: 5
+#| fig-width: 5
 circle_data <- datasaurus_dozen %>%
   filter(dataset == "circle")
 ggplot(data = circle_data, mapping = aes(x = x, y = y)) + 
@@ -69,6 +73,8 @@ Plotting data from the star dataset:
 
 ```{r}
 #| label: plot-star
+#| fig-height: 5
+#| fig-width: 5
 star_data <- datasaurus_dozen %>%
   filter(dataset == "star")
 ggplot(data = star_data, mapping = aes(x = x, y = y)) + 
@@ -78,7 +84,7 @@ ggplot(data = star_data, mapping = aes(x = x, y = y)) +
 Correlation between x and y for star:
 
 ```{r}
-#| label: cor-circle
+#| label: cor-star
 star_data %>%
   summarize(r = cor(x, y))
 ```
@@ -91,6 +97,8 @@ Plotting data from all datasets at the same time:
 
 ```{r}
 #| label: plot-all
+#| fig-height: 10
+#| fig-width: 6
 ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
   geom_point()+
   facet_wrap(~ dataset, ncol = 3) +
